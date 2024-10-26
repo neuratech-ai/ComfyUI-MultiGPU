@@ -20,6 +20,7 @@ The extension adds new loader nodes corresponding to the default ones. The new n
 - `CLIPLoaderMultiGPU`
 - `ControlNetLoaderMultiGPU`
 - `DualCLIPLoaderMultiGPU`
+- `TripleCLIPLoaderMultiGPU`
 - `UNETLoaderMultiGPU`
 - `VAELoaderMultiGPU`
 
