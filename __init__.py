@@ -242,7 +242,7 @@ class DualCLIPLoaderMultiGPU:
             "required": {
                 "clip_name1": (folder_paths.get_filename_list("clip"),),
                 "clip_name2": (folder_paths.get_filename_list("clip"),),
-                "type": (["sdxl", "sd3", "flux"],),
+                "type": (["sdxl", "sd3", "flux", "hunyuan_video"],),
                 "device": ([f"cuda:{i}" for i in range(torch.cuda.device_count())],),
             }
         }
@@ -264,6 +264,8 @@ class DualCLIPLoaderMultiGPU:
             clip_type = comfy.sd.CLIPType.SD3
         elif type == "flux":
             clip_type = comfy.sd.CLIPType.FLUX
+        elif type ==  "hunyuan_video":
+            clip_type = comfy.sd.CLIPType.HUNYUAN_VIDEO
 
         clip = comfy.sd.load_clip(
             ckpt_paths=[clip_path1, clip_path2],
